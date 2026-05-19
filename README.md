@@ -1,97 +1,129 @@
-# Transaction Processing System  
-### Mini Project – 24UCS271 Lab
+# Transaction Processing System
 
----
+## Mini Project
+
+This project is a C language mini project that manages bank account records using a random access file. The program stores account information in `credit.dat` and allows the user to add, view, search, update, and delete account records.
 
 ## Objective
-This mini project focuses on understanding, modifying, and extending a **Transaction Processing System** program. Students are expected to analyze existing code, improve it, and add new functionalities while following good coding practices.
 
----
+The objective of this project is to understand file handling in C, especially random access file processing. The project also improves the given base program by adding new features, validation, and better menu options.
 
-## Reference Code
-Review the given source code before starting the project:
+## Files Included
 
-🔗 https://replit.com/@ashokb/Unit5Programs#trans.c
+| File Name | Description |
+|---|---|
+| `trans.c` | Main C source code |
+| `credit.dat` | Binary file used to store account records |
+| `clients.dat` | Sample binary account data file |
+| `MINI PROJECT Guidelines.pdf` | Project guideline file |
+| `README.md` | Project documentation |
 
----
+## Features
 
-## Tasks to be Performed
+1. Create a printable `accounts.txt` file.
+2. List all active accounts on the screen.
+3. Search an account by account number.
+4. Add a new account.
+5. Deposit amount into an account.
+6. Withdraw amount from an account.
+7. Prevent withdrawal when balance is insufficient.
+8. Delete an existing account.
+9. Count total active accounts.
+10. Validate account numbers from 1 to 100.
+11. Automatically create `credit.dat` if it is missing.
+12. Regenerate `credit.dat` if the file size is invalid.
 
-1. Compile and run the given executable code.
-2. Perform your own testing of the program.
-3. Add a new account detail and regenerate the `accounts.txt` file.
-   - Inspect the contents of the file.
-   - Verify whether the output matches your expectations.
-4. Identify and fix any logical errors in the program.
-5. Add new functionality  
-   - Example: Listing all account information.
-6. Optimize the program for better performance and efficiency.
+## Menu Options
 
----
+```text
+1 - store a formatted text file of accounts called "accounts.txt" for printing
+2 - list all accounts
+3 - search an account
+4 - add a new account
+5 - deposit amount
+6 - withdraw amount
+7 - delete an account
+8 - count active accounts
+9 - end program
+```
 
-## Evaluation Criteria
+## How to Compile
 
-### 1. General (25 Points)
-| Activity | Points | Remarks |
-|--------|--------|--------|
-| Self-effort | 5 | Student’s own assessment of hours spent (no copying or external references) |
-| Turnaround Time | 10 | Provide three time slots; earlier demo gets more points |
-| Project Demo | 10 | Demo must be done using repl.it |
+Open the project folder in VS Code or terminal and run:
 
----
+```powershell
+gcc trans.c -o trans.exe
+```
 
-### 2. Comprehension (15 Points)
-| Activity | Points |
-|--------|--------|
-| Domain Knowledge | 5 |
-| Added Functionality (Ideas) | 5 |
-| Code Comprehension | 5 |
+## How to Run
 
----
+```powershell
+.\trans.exe
+```
 
-### 3. Modification (35 Points)
-| Activity | Points |
-|--------|--------|
-| Code Improvement | 5 |
-| Functional Decomposition | 10 |
-| Refactoring for Memory Usage | 10 |
-| Refactoring for Speed | 10 |
+## Sample Test
 
----
+```text
+4
+1
+Smith John 1000
+2
+5
+1
+500
+6
+1
+200
+3
+1
+8
+1
+9
+```
 
-### 4. Innovation (45 Points)
-| Activity | Points |
-|--------|--------|
-| New Features / User Stories (Faculty specified) | 5 |
-| Requirement to Code Translation | 10 |
-| Added Functionality (Simple – Error Handling) | 10 |
-| Added Functionality (Advanced) | 20 |
+## Sample Test Explanation
 
----
+| Input | Action |
+|---|---|
+| `4` | Add new account |
+| `1` | Account number |
+| `Smith John 1000` | Last name, first name, balance |
+| `2` | List all accounts |
+| `5` | Deposit amount |
+| `1` | Account number |
+| `500` | Deposit amount |
+| `6` | Withdraw amount |
+| `1` | Account number |
+| `200` | Withdraw amount |
+| `3` | Search account |
+| `1` | Account number |
+| `8` | Count active accounts |
+| `1` | Generate `accounts.txt` |
+| `9` | Exit program |
 
-## Total Marks
-**120 Marks**  
-➡ Reduced to **20 Marks** for final evaluation
+## Output File
 
----
+When option `1` is selected, the program creates:
 
-## Rules for Mini Project Implementation
+```text
+accounts.txt
+```
 
-- Maximum of **2 attempts** will be given for project presentation.
-- If dissatisfied with the first score, a second attempt is allowed.
-- The **best score** out of the two attempts will be considered final.
-- Discussion and clarification among students are allowed.
-- **Copying or borrowing code is strictly prohibited.**
-- Violation of plagiarism rules will result in a **zero (0 / NULL) score**.
+This file contains the formatted account details for printing.
 
----
+## Error Handling
 
-## Additional Reference
-🔗 http://j.mp/transactionUnit5  
-🔗 https://htmlpreview.github.io/?https://github.com/kgisl/makesite/blob/master/content/blog/2021-06-23-unit5-mini-project.md.html
-🔗 https://github.com/24UCS271-MiniProject/miniProjectSourceCode/
+The program handles the following errors:
 
----
+- Invalid account numbers
+- Missing `credit.dat` file
+- Incorrect `credit.dat` file size
+- Duplicate account creation
+- Searching for non-existing accounts
+- Deleting non-existing accounts
+- Invalid deposit or withdrawal amount
+- Insufficient balance during withdrawal
 
-**Date:** 31/01/2026  
-**Time:** 06:42
+## Conclusion
+
+This project demonstrates random access file handling in C and provides a simple transaction processing system with useful banking operations.
